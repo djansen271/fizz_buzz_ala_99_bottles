@@ -47,7 +47,7 @@ describe FizzBuzz do
     end
 
     it 'returns 2, Fizz, 4, Buzz given 2,5' do
-      expect(subject.verses(2,5)).to eq(['2',fizzbuzz_respone, '4', buzz_response])
+      expect(subject.verses(2,5)).to eq(['2',fizz_response, '4', buzz_response])
     end
   end
 
