@@ -12,4 +12,8 @@ class FizzBuzz
       n.to_s
     end
   end
+
+  def verses(starting, ending)
+    (starting..ending).map{ |n| single_verse(n) }
+  end
 end
