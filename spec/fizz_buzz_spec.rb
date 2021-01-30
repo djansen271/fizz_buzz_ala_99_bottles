@@ -29,7 +29,7 @@ describe FizzBuzz do
     end
 
     it 'returns Fizz given 33' do
-      expect(subject.single_verse(33)).to eq(fizzbuzz_respone)
+      expect(subject.single_verse(33)).to eq(fizz_response)
     end
 
     it 'returns Buzz given 35' do
