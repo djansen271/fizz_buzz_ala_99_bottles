@@ -16,4 +16,8 @@ class FizzBuzz
   def verses(starting, ending)
     (starting..ending).map{ |n| single_verse(n) }
   end
+
+  def song
+    verses(1,100)
+  end
 end
