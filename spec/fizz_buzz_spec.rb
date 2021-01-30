@@ -59,7 +59,7 @@ describe FizzBuzz do
       31 32 #{fizz_response} 34 #{buzz_response} #{fizz_response} 37 38 #{fizz_response} #{buzz_response} 41 #{fizz_response} 43 44 #{fizzbuzz_response}
       46 47 #{fizz_response} 49 #{buzz_response} #{fizz_response} 52 53 #{fizz_response} #{buzz_response} 56 #{fizz_response} 58 59 #{fizzbuzz_response}
       61 62 #{fizz_response} 64 #{buzz_response} #{fizz_response} 67 68 #{fizz_response} #{buzz_response} 71 #{fizz_response} 73 74 #{fizzbuzz_response}
-      76 77 #{fizz_response} 79 #{buzz_response} #{fizz_response} 82 82 #{fizz_response} #{buzz_response} 86 #{fizz_response} 88 89 #{fizzbuzz_response}
+      76 77 #{fizz_response} 79 #{buzz_response} #{fizz_response} 82 83 #{fizz_response} #{buzz_response} 86 #{fizz_response} 88 89 #{fizzbuzz_response}
       91 92 #{fizz_response} 94 #{buzz_response} #{fizz_response} 97 98 #{fizz_response} #{buzz_response}
   ).map(&:strip)
       debugging_message = ""
