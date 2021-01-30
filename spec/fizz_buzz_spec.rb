@@ -62,8 +62,12 @@ describe FizzBuzz do
       76 77 #{fizz_response} 79 #{buzz_response} #{fizz_response} 82 82 #{fizz_response} #{buzz_response} 86 #{fizz_response} 88 89 #{fizzbuzz_response}
       91 92 #{fizz_response} 94 #{buzz_response} #{fizz_response} 97 98 #{fizz_response} #{buzz_response}
   ).map(&:strip)
-      binding.pry
-      expect(subject.song).to eq(expected)
+      debugging_message = ""
+      actual = subject.song
+      expected.each_with_index do |exp, i|
+        debugging_message << "Expected: #{exp} does not match actual: #{actual[i]} at index #{i}\n" if exp != actual[i]
+      end
+      expect(subject.song).to eq(expected), debugging_message
     end
   end
 
