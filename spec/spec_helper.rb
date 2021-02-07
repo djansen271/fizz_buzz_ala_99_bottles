@@ -1,4 +1,5 @@
 require_relative '../lib/shameless_green_fizz_buzz'
+require_relative '../lib/incomprehensibly_concise_fizz_buzz'
 
 require 'pry'
 
