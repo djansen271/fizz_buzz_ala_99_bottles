@@ -8,6 +8,7 @@ class IncomprehensiblyConciseFizzBuzz
   end
 
   def song
+    verses(1,100)
   end
 end
 
