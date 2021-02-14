@@ -14,8 +14,8 @@ class SpeculativelyGeneralFizzBuzz2
     (starting..ending).map{ |n| single_verse(n) }
   end
 
-  def song
-    verses(1,100)
+  def song(first_verse = 1, last_verse = 100)
+    verses(first_verse, last_verse)
   end
 
   def verse_for(n)
