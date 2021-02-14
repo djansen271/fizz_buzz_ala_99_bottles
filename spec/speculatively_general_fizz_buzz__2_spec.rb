@@ -239,4 +239,77 @@ describe SpeculativelyGeneralFizzBuzz2 do
       end
     end
   end
+
+  describe '3 inputs' do
+    let(:fizz_response) { 'Fizz' }
+    let(:buzz_response) { 'Buzz' }
+    let(:gozz_response) { 'Gozz' }
+    let(:fizzbuzz_response) { 'FizzBuzz' }
+    let(:fizzgozz_response) { 'FizzGozz' }
+    let(:buzzgozz_response) { 'BuzzGozz' }
+    let(:fizzbuzzgozz_response) { 'FizzBuzzGozz' }
+    let(:subject) { SpeculativelyGeneralFizzBuzz2.new( {3 => 'Fizz', 5 => 'Buzz', 7 => 'Gozz'} ) }
+
+    describe '#single_verse' do
+      it 'returns 1 given 1' do
+        expect(subject.single_verse(1)).to eq('1')
+      end
+
+      it 'returns Fizz given 3' do
+        expect(subject.single_verse(3)).to eq(fizz_response)
+      end
+
+      it 'returns Buzz given 5' do
+        expect(subject.single_verse(5)).to eq(buzz_response)
+      end
+
+      it 'returns Gozz given 7' do
+        expect(subject.single_verse(7)).to eq(gozz_response)
+      end
+
+      it 'returns FizzGozz given 21' do
+        expect(subject.single_verse(21)).to eq(fizzgozz_response)
+      end
+
+      it 'returns BuzzGozz given 35' do
+        expect(subject.single_verse(35)).to eq(buzzgozz_response)
+      end
+
+      it 'returns FizzBuzzGozz given 105' do
+        expect(subject.single_verse(105)).to eq(fizzbuzzgozz_response)
+      end
+
+      it 'returns BuzzGozz given 35' do
+        expect(subject.single_verse(35)).to eq(buzzgozz_response)
+      end
+
+      it 'returns FizzBuzz given 45' do
+        expect(subject.single_verse(45)).to eq(fizzbuzz_response)
+      end
+    end
+
+    describe '#verses' do
+      it 'returns 1, 2 given 1,2' do
+        expect(subject.verses(1,2)).to eq(['1','2'])
+      end
+
+      it 'returns 2, Fizz, 4, Buzz, Fizz, Gozz, 8 given 2,8' do
+        expect(subject.verses(2,8)).to eq(['2',fizz_response, '4', buzz_response, fizz_response, gozz_response, '8'])
+      end
+    end
+
+    describe '#song' do
+      it 'accepts a beginning and ending verse' do
+        expected = %W(
+        1  2  #{fizz_response} 4  #{buzz_response} #{fizz_response} #{gozz_response}  8  #{fizz_response} #{buzz_response}
+    ).map(&:strip)
+        debugging_message = ""
+        actual = subject.song(1,10)
+        expected.each_with_index do |exp, i|
+          debugging_message << "Expected: #{exp} does not match actual: #{actual[i]} at index #{i}\n" if exp != actual[i]
+        end
+        expect(actual).to eq(expected), debugging_message
+      end
+    end
+  end
 end
