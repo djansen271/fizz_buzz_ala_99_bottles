@@ -312,4 +312,79 @@ describe SpeculativelyGeneralFizzBuzz2 do
       end
     end
   end
+
+  describe '10 inputs' do
+    let(:a_response) { 'a' }
+    let(:b_response) { 'b' }
+    let(:c_response) { 'c' }
+    let(:d_response) { 'd' }
+    let(:e_response) { 'e' }
+    let(:f_response) { 'f' }
+    let(:g_response) { 'g' }
+    let(:h_response) { 'h' }
+    let(:subject) { SpeculativelyGeneralFizzBuzz2.new(
+      {
+      2 => 'a',
+      3 => 'b',
+      4 => 'c',
+      5 => 'd',
+      6 => 'e',
+      7 => 'f',
+      8 => 'g',
+      9 => 'h',
+      10 => 'i',
+      11 => 'j',
+      12 => 'k',
+    }
+    ) }
+    describe '#single_verse' do
+      it 'returns 1 given 1' do
+        expect(subject.single_verse(1)).to eq('1')
+      end
+
+      it 'returns b given 3' do
+        expect(subject.single_verse(3)).to eq('b')
+      end
+
+      it 'returns ac given 4' do
+        expect(subject.single_verse(4)).to eq('ac')
+      end
+
+      it 'returns d given 5' do
+        expect(subject.single_verse(5)).to eq('d')
+      end
+
+      it 'returns abe given 6' do
+        expect(subject.single_verse(6)).to eq('abe')
+      end
+
+      it 'returns f given 7' do
+        expect(subject.single_verse(7)).to eq('f')
+      end
+
+      it 'returns acg given 8' do
+        expect(subject.single_verse(8)).to eq('acg')
+      end
+
+      it 'returns bh given 9' do
+        expect(subject.single_verse(9)).to eq('bh')
+      end
+
+      it 'returns adi given 10' do
+        expect(subject.single_verse(10)).to eq('adi')
+      end
+
+      it 'returns j given 11' do
+        expect(subject.single_verse(11)).to eq('j')
+      end
+
+      it 'returns abcek given 12' do
+        expect(subject.single_verse(12)).to eq('abcek')
+      end
+
+      it 'returns abcdefghijk given 479001600' do
+        expect(subject.single_verse(479001600)).to eq('abcdefghijk')
+      end
+    end
+  end
 end
