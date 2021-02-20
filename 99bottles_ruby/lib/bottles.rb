@@ -15,7 +15,7 @@ class Bottles
       "Go to the store and buy some more, " +
       "#{successor(number)} #{container(successor(number))} of beer on the wall.\n"
     else
-      "#{number} #{container(number)} of beer on the wall, " +
+      "#{number_representation(number).capitalize} #{container(number)} of beer on the wall, " +
       "#{number} #{container(number)} of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
       "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
@@ -42,7 +42,7 @@ class Bottles
     if number == 0
       "no more"
     else
-      number
+      number.to_s
     end
   end
 
