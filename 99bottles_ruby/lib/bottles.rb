@@ -13,12 +13,12 @@ class Bottles
       "#{number_representation(number).capitalize} bottles of beer on the wall, " +
       "#{number_representation(number)} bottles of beer.\n" +
       "Go to the store and buy some more, " +
-      "#{successor(number)} bottles of beer on the wall.\n"
+      "#{successor(number)} #{container(successor(number))} of beer on the wall.\n"
     else
       "#{number} #{container(number)} of beer on the wall, " +
       "#{number} #{container(number)} of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
-      "#{number_representation(successor(number))} #{container(number - 1)} of beer on the wall.\n"
+      "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
     end
   end
 
