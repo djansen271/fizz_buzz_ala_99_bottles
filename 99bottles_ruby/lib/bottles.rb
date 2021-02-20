@@ -12,12 +12,12 @@ class Bottles
     when 0
       "#{number_representation(number).capitalize} #{container(number)} of beer on the wall, " +
       "#{number_representation(number)} #{container(number)} of beer.\n" +
-      "Go to the store and buy some more, " +
+      "#{next_action(number)}, " +
       "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
     else
       "#{number_representation(number).capitalize} #{container(number)} of beer on the wall, " +
       "#{number_representation(number)} #{container(number)} of beer.\n" +
-      "Take #{pronoun(number)} down and pass it around, " +
+      "#{next_action(number)}, " +
       "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
     end
   end
@@ -51,6 +51,14 @@ class Bottles
       99
     else
       number - 1
+    end
+  end
+
+  def next_action(number=:TODO)
+    if number == 0
+      "Go to the store and buy some more"
+    else
+      "Take #{pronoun(number)} down and pass it around"
     end
   end
 end
