@@ -10,13 +10,13 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "#{number_representation(number).capitalize} bottles of beer on the wall, " +
-      "#{number_representation(number)} bottles of beer.\n" +
+      "#{number_representation(number).capitalize} #{container(number)} of beer on the wall, " +
+      "#{number_representation(number)} #{container(number)} of beer.\n" +
       "Go to the store and buy some more, " +
-      "#{successor(number)} #{container(successor(number))} of beer on the wall.\n"
+      "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
     else
       "#{number_representation(number).capitalize} #{container(number)} of beer on the wall, " +
-      "#{number} #{container(number)} of beer.\n" +
+      "#{number_representation(number)} #{container(number)} of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
       "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
     end
