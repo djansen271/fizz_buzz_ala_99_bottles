@@ -13,12 +13,12 @@ class Bottles
       "#{number_representation(number).capitalize} bottles of beer on the wall, " +
       "#{number_representation(number)} bottles of beer.\n" +
       "Go to the store and buy some more, " +
-      "99 bottles of beer on the wall.\n"
+      "#{successor(number)} bottles of beer on the wall.\n"
     else
       "#{number} #{container(number)} of beer on the wall, " +
       "#{number} #{container(number)} of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
-      "#{number_representation(number - 1)} #{container(number - 1)} of beer on the wall.\n"
+      "#{number_representation(successor(number))} #{container(number - 1)} of beer on the wall.\n"
     end
   end
 
@@ -43,6 +43,14 @@ class Bottles
       "no more"
     else
       number
+    end
+  end
+
+  def successor(number)
+    if number == 0
+      99
+    else
+      number - 1
     end
   end
 end
