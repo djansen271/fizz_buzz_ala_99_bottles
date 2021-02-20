@@ -10,8 +10,8 @@ class Bottles
   def verse(number)
     case number
     when 0
-      "No more bottles of beer on the wall, " +
-      "no more bottles of beer.\n" +
+      "#{number_representation(number).capitalize} bottles of beer on the wall, " +
+      "#{number_representation(number)} bottles of beer.\n" +
       "Go to the store and buy some more, " +
       "99 bottles of beer on the wall.\n"
     else
