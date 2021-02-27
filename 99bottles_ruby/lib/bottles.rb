@@ -15,6 +15,34 @@ class Bottles
   end
 
   def container(number)
+    BottleNumber.new(number).container(number)
+  end
+
+  def pronoun(number=:TODO)
+    BottleNumber.new(number).pronoun(number)
+  end
+
+  def number_representation(number)
+    BottleNumber.new(number).number_representation(number)
+  end
+
+  def successor(number)
+    BottleNumber.new(number).successor(number)
+  end
+
+  def next_action(number=:TODO)
+    BottleNumber.new(number).next_action(number)
+  end
+end
+
+class BottleNumber
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
+
+  def container(number)
     if number == 1
       "bottle"
     else
