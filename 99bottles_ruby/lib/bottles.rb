@@ -18,10 +18,6 @@ class Bottles
     BottleNumber.new(number).container
   end
 
-  def pronoun(number=:TODO)
-    BottleNumber.new(number).pronoun
-  end
-
   def number_representation(number)
     BottleNumber.new(number).number_representation
   end
