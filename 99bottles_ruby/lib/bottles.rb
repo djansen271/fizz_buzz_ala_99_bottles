@@ -8,26 +8,13 @@ class Bottles
   end
 
   def verse(number)
-    "#{number_representation(number).capitalize} #{container(number)} of beer on the wall, " +
-    "#{number_representation(number)} #{container(number)} of beer.\n" +
-    "#{next_action(number)}, " +
-    "#{number_representation(successor(number))} #{container(successor(number))} of beer on the wall.\n"
-  end
+    bottle_number = BottleNumber.new(number)
+    next_bottle = BottleNumber.new(bottle_number.successor)
 
-  def container(number)
-    BottleNumber.new(number).container
-  end
-
-  def number_representation(number)
-    BottleNumber.new(number).number_representation
-  end
-
-  def successor(number)
-    BottleNumber.new(number).successor
-  end
-
-  def next_action(number=:TODO)
-    BottleNumber.new(number).next_action
+    "#{bottle_number.number_representation.capitalize} #{bottle_number.container} of beer on the wall, " +
+    "#{bottle_number.number_representation} #{bottle_number.container} of beer.\n" +
+    "#{bottle_number.next_action}, " +
+    "#{next_bottle.number_representation} #{next_bottle.container} of beer on the wall.\n"
   end
 end
 
