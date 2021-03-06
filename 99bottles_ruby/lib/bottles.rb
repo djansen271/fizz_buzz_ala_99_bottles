@@ -11,10 +11,10 @@ class Bottles
     bottle_number = BottleNumber.new(number)
     next_bottle = BottleNumber.new(bottle_number.successor)
 
-    "#{bottle_number.number_representation.capitalize} #{bottle_number.container} of beer on the wall, " +
-    "#{bottle_number.number_representation} #{bottle_number.container} of beer.\n" +
+    "#{bottle_number} ".capitalize +  "of beer on the wall, " +
+    "#{bottle_number} of beer.\n" +
     "#{bottle_number.next_action}, " +
-    "#{next_bottle.number_representation} #{next_bottle.container} of beer on the wall.\n"
+    "#{next_bottle} of beer on the wall.\n"
   end
 end
 
@@ -63,5 +63,9 @@ class BottleNumber
     else
       "Take #{pronoun} down and pass it around"
     end
+  end
+
+  def to_s
+    "#{number_representation} #{container}"
   end
 end
