@@ -8,13 +8,21 @@ class Bottles
   end
 
   def verse(number)
-    bottle_number = BottleNumber.new(number)
-    next_bottle = BottleNumber.new(bottle_number.successor)
+    bottle_number = bottle_number_for(number)
+    next_bottle = bottle_number_for(bottle_number.successor)
 
     "#{bottle_number} ".capitalize +  "of beer on the wall, " +
     "#{bottle_number} of beer.\n" +
     "#{bottle_number.next_action}, " +
     "#{next_bottle} of beer on the wall.\n"
+  end
+
+  def bottle_number_for(number)
+    if number == 0
+      BottleNumber0
+    else
+      BottleNumber
+    end.new(number)
   end
 end
 
@@ -42,11 +50,7 @@ class BottleNumber
   end
 
   def number_representation
-    if number == 0
-      "no more"
-    else
-      number.to_s
-    end
+    number.to_s
   end
 
   def successor
@@ -67,5 +71,11 @@ class BottleNumber
 
   def to_s
     "#{number_representation} #{container}"
+  end
+end
+
+class BottleNumber0 < BottleNumber
+  def number_representation
+      "no more"
   end
 end
