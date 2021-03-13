@@ -31,11 +31,11 @@ export class Bottles {
         'Go to the store and buy some more, ' +
         '99 bottles of beer on the wall.\n';
         break;
-      case 99:
-        str = '99 bottles of beer on the wall, ' +
-          '99 bottles of beer.\n' +
+      default:
+        str = `${number} bottles of beer on the wall, ` +
+          `${number} bottles of beer.\n` +
           'Take one down and pass it around, ' +
-          '98 bottles of beer on the wall.\n';
+          `${number - 1} bottles of beer on the wall.\n`;
     }
     return str
   }
