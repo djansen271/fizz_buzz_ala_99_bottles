@@ -1,4 +1,4 @@
-// import { downTo } from './helpers';
+import { downTo } from './helpers';
 
 export class Bottles {
   constructor() {
@@ -38,5 +38,17 @@ export class Bottles {
           `${number - 1} bottles of beer on the wall.\n`;
     }
     return str
+  }
+
+  verses(starting, ending) {
+    let versesStr = "";
+    for(let i = starting; i >= ending; i--) {
+      versesStr = versesStr + this.verse(i) + "\n";
+    }
+    return versesStr.trim() + "\n";
+  }
+
+  song() {
+    return this.verses(99,0)
   }
 }
