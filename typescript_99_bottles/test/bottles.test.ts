@@ -1,23 +1,24 @@
-import { oneBottle } from '../src/bottles';
+import  *  as bottles from '../src/bottles';
+
 
 describe('Bottles', () => {
   test('one bottle', () => {
-    const expected = '1 bottle of beer on the wall, ' +
-      '1 bottle of beer.\n' +
-      'Take it down and pass it around, ' +
-      'no more bottles of beer on the wall.\n';
-    expect(oneBottle.verse()).toBe(expected)
+    const expected = 'Take it down and pass it around';
+    expect(bottles.bottleNumber1.nextAction).toBe(expected)
+  });
+
+  test('zero bottle', () => {
+    const expected = 'Go to the store and buy some more';
+    expect(bottles.bottleNumber0.nextAction).toBe(expected)
   });
 });
 
-// describe('Bottles', () => {
 //   test('the first verse', () => {
-//     const expected =
-//       '99 bottles of beer on the wall, ' +
-//       '99 bottles of beer.\n' +
-//       'Take one down and pass it around, ' +
-//       '98 bottles of beer on the wall.\n';
-//     expect(new Bottles().verse(99)).toBe(expected);
+//     const expected = '99 bottles of beer on the wall, ' +
+//     '99 bottles of beer.\n' +
+//     'Take one down and pass it around, ' +
+//     '98 bottles of beer on the wall.\n';
+//     expect(bottles.bottleNumberDefault.verse(99)).toBe(expected);
 //   });
 
 //   test('the second verse', () => {
@@ -26,8 +27,9 @@ describe('Bottles', () => {
 //       '98 bottles of beer.\n' +
 //       'Take one down and pass it around, ' +
 //       '97 bottles of beer on the wall.\n';
-//     expect(new Bottles().verse(98)).toBe(expected);
+//     expect(bottles.bottleNumberDefault.verse(98)).toBe(expected);
 //   });
+// });
 
 //   test('another verse', () => {
 //     const expected =
