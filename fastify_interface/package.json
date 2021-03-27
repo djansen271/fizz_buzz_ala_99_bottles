@@ -1,0 +1,20 @@
+{
+  "name": "fastify_interface",
+  "version": "1.0.0",
+  "description": "2021-03-20 1:1 HW to get at the core of interfaces",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DJ",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^3.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "Animals": [
+    {
+      "userId": "raccoon",
+      "commonName": "raccoon",
+      "class": "mammal",
+      "consumption": "omnivore",
+      "nativeContinent": "North America"
+    },
+    {
+      "userId": "bull ant",
+      "commonName": "bull ant",
+      "bioClass": "insect",
+      "consumption": "omniovre",
+      "nativeContinent": "Australia"
+    },
+    {
+      "userId": "howlerMonkey",
+      "commonName": "howler monkey",
+      "bioClass": "mammal",
+      "consumption": "herbivore",
+      "nativeContinent": "South America"
+    },
+    {
+      "userId": "ethiopianWolf",
+      "commonName": "Ethiopian wolf",
+      "bioClass": "mammal",
+      "consumption": "carnivore",
+      "nativeContinent": "Africa"
+    }
+  ]
+}
