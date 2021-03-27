@@ -1,73 +1,64 @@
+Run it:
+`npm run build && npm run start`
 
-to me
+§ The 99 bottles problem has 3 main methods:
 
+· Verse
 
+· Verses
 
-    Scan receipts (2) and email to Dexcom account
-    HW:
+· Song
 
-o    Main thing: homework.
+§ My Naive next step… is there a verse next step? Versable??
 
-§  The 99 bottles problem has 3 main methods:
+o Data comes in as
 
-·         Verse
+§ A
 
-·         Verses
+§ B
 
-·         Song
+§ C
 
-§  My Naive next step… is there a verse next step? Versable??
+o We need to do two unrelated tasks. Each requires some portion of A/B/C (or an aggregate of them)
 
-o    Data comes in as
+o Can the “do something” part of the code have an interface that segregates it from the data model??
 
-§  A
+o Can my model wear many hats?
 
-§  B
+o Example hats:
 
-§  C
+§ Serialization & deserialization (can your model spit itself out as… JSON/Yaml/pick your format).
 
-o    We need to do two unrelated tasks. Each requires some portion of A/B/C (or an aggregate of them)
+· That could be used by a function that writes it to a file.
 
-o    Can the “do something” part of the code have an interface that segregates it from the data model??
+§ Loggable… implements some kind of prettyPrint method that gets called. Isn’t just [object Object]
 
-o    Can my model wear many hats?
+o What about…
 
-o    Example hats:
+§ Start a fastify project
 
-§  Serialization & deserialization (can your model spit itself out as… JSON/Yaml/pick your format).
+§ Implement a bike model. It has properties like:
 
-·         That could be used by a function that writes it to a file.
+· Frame material
 
-§  Loggable… implements some kind of prettyPrint method that gets called. Isn’t just [object Object]
+· Number of speeds
 
-o    What about…
+· Handlebar type
 
-§  Start a fastify project
+· Etc.
 
-§  Implement a bike model. It has properties like:
+§ Implement a /bike route
 
-·         Frame material
+· That returns the bike as Markdown
 
-·         Number of speeds
+· That logs the bike being rendered in a nice way
 
-·         Handlebar type
+§ Implement a log() method with unit tests that uses an interface
 
-·         Etc.
+§ Implement a markdown() method that generates a markdown doc using an interface
 
-§  Implement a /bike route
-
-·         That returns the bike as Markdown
-
-·         That logs the bike being rendered in a nice way
-
-§  Implement a log() method with unit tests that uses an interface
-
-§  Implement a markdown() method that generates a markdown doc using an interface
-
-§  Implement a totally different model that conforms to the same interfaces and make it available too
+§ Implement a totally different model that conforms to the same interfaces and make it available too
 
 §
 
-
 ...
-
