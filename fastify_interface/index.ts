@@ -7,18 +7,7 @@ const readFile = util.promisify( fs.readFile );
 
 import { Animal } from "./models/animal";
 import { Mushroom } from "./models/mushroom";
-
-// fastify.route( {
-//   method: "GET",
-//   url: "/",
-//   schema: {
-//     response: {
-//       200: {
-//         type: "array",
-//       }
-//     }
-//   }
-// })
+import { Loggable, Markdownable } from './interfaces/interfaces'
 
 fastify.route( {
   method: "GET",
@@ -38,8 +27,9 @@ fastify.route( {
   },
   handler: async (request: string, reply: string) => {
     let animal = new Animal ("raccoon", "mammal", "omnivore", "North America")
-    animal.log();
-    return animal.markdown();
+    // animal.log();
+    fancyLog(animal);
+    return fancyMarkdown(animal);
   }
 })
 
@@ -61,8 +51,9 @@ fastify.route( {
   },
   handler: async (request: string, reply: string) => {
     let mushroom = new Mushroom ("white button", "Agaricus bisporus", "convex", "saprotrophic")
-    mushroom.log();
-    return mushroom.markdown();
+    // mushroom.log();
+    fancyLog(mushroom);
+    return fancyMarkdown(mushroom);
   }
 })
 
@@ -78,3 +69,17 @@ const start = async() => {
 }
 
 start();
+
+function fancyLog(thingToLog: Loggable) {
+  console.log("***********");
+  thingToLog.log();
+  console.log("***********");
+
+}
+
+function fancyMarkdown(thingToMarkdown: Markdownable) {
+  const str = "_*_*_*_*_*_*_*_*_*" +
+  thingToMarkdown.markdown() +
+  "_*_*_*_*_*_*_*_*_*"
+  return str;
+}
