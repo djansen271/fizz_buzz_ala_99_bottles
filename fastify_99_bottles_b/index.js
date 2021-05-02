@@ -41,9 +41,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fastify_1 = __importDefault(require("fastify"));
 var server = fastify_1.default();
+var songBuilder_1 = require("./src/songBuilder");
 server.get('/', function (request, reply) { return __awaiter(void 0, void 0, void 0, function () {
+    var songBuilder;
     return __generator(this, function (_a) {
-        return [2 /*return*/, 'Home page\n'];
+        songBuilder = new songBuilder_1.SongBuilder;
+        return [2 /*return*/, songBuilder.helloWorld()
+            // return 'Home page\n'
+        ];
     });
 }); });
 server.listen(8080, function (err, address) {
