@@ -2,12 +2,11 @@ import fastify from 'fastify';
 
 const server = fastify();
 
-import { SongBuilder } from './src/songBuilder'
+import { NinetyNineBottles } from './src/ninetyNineBottles'
 
 server.get('/', async(request, reply) => {
-  const songBuilder = new SongBuilder
-  return songBuilder.helloWorld()
-  // return 'Home page\n'
+  const ninetyNineBottles = new NinetyNineBottles
+  return ninetyNineBottles.verse(1)
 });
 
 server.listen(8080, (err, address) => {
