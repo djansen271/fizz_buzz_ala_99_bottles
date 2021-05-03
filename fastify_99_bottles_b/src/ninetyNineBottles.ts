@@ -1,3 +1,5 @@
+import { start } from "node:repl";
+
 export class NinetyNineBottles {
   verse(n: number) {
     switch (n) {
@@ -20,5 +22,13 @@ export class NinetyNineBottles {
         `Take one down and pass it around, ` +
         `${n - 1} bottles of beer on the wall.\n`;
     }
+  }
+
+  verses(starting: number, ending: number) {
+    let str = "";
+    for (let i = starting; i >= ending; i--) {
+      str = str + this.verse(i) + '\n';
+    }
+    return str.slice(0,-1);
   }
 }
