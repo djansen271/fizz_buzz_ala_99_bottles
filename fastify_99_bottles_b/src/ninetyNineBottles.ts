@@ -1,6 +1,10 @@
 import { start } from "node:repl";
 
 export class NinetyNineBottles {
+  song() {
+    return this.verses(99,0);
+  }
+
   verse(n: number) {
     switch (n) {
       case 0:
