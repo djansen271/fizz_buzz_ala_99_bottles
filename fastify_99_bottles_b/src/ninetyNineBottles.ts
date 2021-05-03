@@ -1,6 +1,4 @@
-import { start } from "node:repl";
-
-export class NinetyNineBottles {
+export class NinetyNineBottles implements SongBuilder {
   song() {
     return this.verses(99,0);
   }
