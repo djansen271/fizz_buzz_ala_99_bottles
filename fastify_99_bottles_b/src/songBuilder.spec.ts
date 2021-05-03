@@ -37,10 +37,18 @@ describe('verse', () => {
 
   test('verse 1', () => {
     const expected =
-      '1 bottle of beer on the wall, ' +
-      '1 bottle of beer.\n' +
-      'Take it down and pass it around, ' +
-      'no more bottles of beer on the wall.\n';
+    '1 bottle of beer on the wall, ' +
+    '1 bottle of beer.\n' +
+    'Take it down and pass it around, ' +
+    'no more bottles of beer on the wall.\n';
+    expect(songBuilder.verse(1)).toEqual(expected);
   });
+
+  test('verse 0', () => {
+    const expected =
+    'No more bottles of beer on the wall, ' + 'no more bottles of beer.\n' +
+    'Go to the store and buy some more, ' + '99 bottles of beer on the wall.\n';
+    expect(songBuilder.verse(0)).toEqual(expected);
+  })
 })
 
