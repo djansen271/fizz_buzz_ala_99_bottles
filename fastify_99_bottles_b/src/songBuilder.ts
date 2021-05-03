@@ -1,8 +1,4 @@
 export class SongBuilder {
-  helloWorld() {
-    return "hello world";
-  }
-
   verse(n: number) {
     switch (n) {
       case 0:
