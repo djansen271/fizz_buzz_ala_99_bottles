@@ -34,5 +34,13 @@ describe('verse', () => {
     'Take one down and pass it around, ' + '1 bottle of beer on the wall.\n';
     expect(songBuilder.verse(2)).toEqual(expected);
   });
+
+  test('verse 1', () => {
+    const expected =
+      '1 bottle of beer on the wall, ' +
+      '1 bottle of beer.\n' +
+      'Take it down and pass it around, ' +
+      'no more bottles of beer on the wall.\n';
+  });
 })
 
