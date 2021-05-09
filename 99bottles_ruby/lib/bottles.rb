@@ -99,19 +99,16 @@ end
 
 class BottleVerse
   def self.lyrics(number)
-    new(number).lyrics
+    new(BottleNumber.for(number)).lyrics
   end
 
-  attr_reader :number
+  attr_reader :number, :bottle_number
 
-  def initialize(number)
-    @number = number
+  def initialize(bottle_number)
+    @bottle_number = bottle_number
   end
-
 
   def lyrics
-    bottle_number = BottleNumber.for(number)
-
     "#{bottle_number} ".capitalize +  "of beer on the wall, " +
     "#{bottle_number} of beer.\n" +
     "#{bottle_number.next_action}, " +
