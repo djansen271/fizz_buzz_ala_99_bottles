@@ -98,15 +98,16 @@ class BottleNumber6 < BottleNumber
 end
 
 class BottleVerse
+  def self.lyrics(number)
+    new(number).lyrics
+  end
+
   attr_reader :number
 
   def initialize(number)
     @number = number
   end
 
-  def self.lyrics(number)
-    new(number).lyrics
-  end
 
   def lyrics
     bottle_number = BottleNumber.for(number)
