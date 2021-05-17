@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe BottleVerse do
+  before do
+    @role_player = BottleVerse
+  end
+
+  it 'playse the role of a verse_template' do
+  end
+  include_examples 'role'
+
   it 'renders the upper bound of the general rule' do
     expected =
       "99 bottles of beer on the wall, " +

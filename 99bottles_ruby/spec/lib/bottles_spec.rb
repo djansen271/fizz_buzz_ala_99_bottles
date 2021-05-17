@@ -5,6 +5,13 @@ class VerseFake
   "This is verse #{number}.\n" end
 end
 
+describe VerseFake do
+  before do
+    @role_player = VerseFake
+  end
+  include_examples 'role'
+end
+
 describe CountdownSong do
   describe '#verses' do
     let(:verse_template) { class_double(BottleVerse) }
