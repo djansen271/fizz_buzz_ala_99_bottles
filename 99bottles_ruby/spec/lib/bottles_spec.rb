@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'bottles'
 
 describe Bottles do
   describe '#verse' do
