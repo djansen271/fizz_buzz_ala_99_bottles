@@ -1,5 +1,10 @@
 require 'spec_helper'
 
+class VerseFake
+  def self.lyrics(number)
+  "This is verse #{number}.\n" end
+end
+
 describe CountdownSong do
   describe '#verses' do
     let(:verse_template) { class_double(BottleVerse) }
@@ -17,7 +22,22 @@ describe CountdownSong do
 
         expect(subject.verses(99,97)).to eq(expected)
       end
+
+    describe 'using VerseFake ala sandi metz' do
+      let(:subject) { CountdownSong.new(verse_template: VerseFake) }
+      it 'renders a couple verses' do
+        expected =
+          "This is verse 99.\n" + "\n" +
+          "This is verse 98.\n" + "\n" +
+          "This is verse 97.\n"
+        expect(subject.verses(99,97)).to eq(expected)
+      end
+    end
   end
+
+
+
+
 
   describe '#song' do
     it 'renders the entire song' do
