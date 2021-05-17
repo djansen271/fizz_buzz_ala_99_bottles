@@ -46,7 +46,7 @@ describe CountdownSong do
   end
 
   describe 'using VerseFake ala Sandi Metz' do
-    let(:subject) { CountdownSong.new(verse_template: VerseFake) }
+    let(:subject) { CountdownSong.new(verse_template: VerseFake, max: max, min: min) }
 
     describe 'verses' do
       it 'renders a couple verses' do
