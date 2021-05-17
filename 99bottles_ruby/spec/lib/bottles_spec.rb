@@ -35,6 +35,28 @@ describe CountdownSong do
     end
   end
 
+  describe '#verse' do
+
+  describe 'using FakeVerse ala sandi metz' do
+    let(:subject) { CountdownSong.new(verse_template: VerseFake) }
+      it 'renders a verse' do
+        expected = "This is verse 500.\n"
+
+        expect(subject.verse(500)).to eq(expected)
+      end
+    end
+
+    describe 'using a class double of BottleVerse' do
+      let(:verse_template) { class_double(BottleVerse) }
+      let(:subject) { CountdownSong.new(verse_template: verse_template) }
+      it 'renders a verse' do
+        expected = "This is verse 501."
+
+        expect(verse_template).to receive(:lyrics).with(501).and_return 'This is verse 501.'
+        expect(subject.verse(501)).to eq(expected)
+      end
+    end
+  end
 
 
 
